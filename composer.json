@@ -1,0 +1,25 @@
+{
+    "name": "sodalto/forms",
+    "description": "HTML form skeleton.",
+    "type": "library",
+    "license": "WTFPL",
+    "autoload": {
+        "psr-4": {
+            "Sodalto\\Forms\\": "src/",
+            "Sodalto\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Evgeniy Fedorov",
+            "email": "evgeniy.fedorov@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "9.5.x-dev"
+    }
+}
