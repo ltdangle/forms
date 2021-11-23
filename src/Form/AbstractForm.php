@@ -85,4 +85,9 @@ abstract class AbstractForm
     {
         $this->submitUrl = $submitUrl;
     }
+
+    /**
+     * Returns form's HTML.
+     */
+    abstract public function getHtml(): string;
 }

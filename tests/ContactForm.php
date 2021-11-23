@@ -21,6 +21,9 @@ class ContactForm extends AbstractForm
         $this->greeting = $greeting;
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function _configureFormValues()
     {
         $this->formValues['name'] = new FormValue();
@@ -40,6 +43,9 @@ class ContactForm extends AbstractForm
         $this->formValues['message']->setDirtyValue($message);
     }
 
+    /**
+     * @inheritdoc
+     */
     public function getHtml(): string
     {
         return <<<HTML
