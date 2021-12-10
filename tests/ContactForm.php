@@ -16,9 +16,9 @@ class ContactForm extends AbstractForm
      */
     private string $greeting='';
 
-    private FormValue $name;
-    private FormValue $email;
-    private FormValue $message;
+    public FormValue $name;
+    public FormValue $email;
+    public FormValue $message;
 
     public function setGreeting(string $greeting): void
     {
