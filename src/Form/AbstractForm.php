@@ -13,7 +13,7 @@ abstract class AbstractForm
      * Array of FormValue objects.
      * @var FormValue[];
      */
-    protected array $formValues;
+    protected array $validateValues;
 
     public function __construct()
     {
@@ -26,7 +26,7 @@ abstract class AbstractForm
     protected function _validate(): bool
     {
         $isValid = true;
-        foreach ($this->formValues as $formValue) {
+        foreach ($this->validateValues as $formValue) {
             try {
                 $valueObjectClass = $formValue->getValueObjectClass();
                 $valueObject = new $valueObjectClass($formValue->getDirtyValue());
@@ -53,33 +53,11 @@ abstract class AbstractForm
      */
     abstract protected function _configureFormValues();
 
-    /**
-     * @return FormValue[]
-     */
-    public function getFormValues(): array
-    {
-        return $this->formValues;
-    }
-
-    public function addFormValue(FormValue $formElement)
-    {
-        $this->formValues[] = $formElement;
-    }
-
-
-    public function getFormValueByKey(string $key): ?FormValue
-    {
-        if (array_key_exists($key, $this->formValues)) {
-            return $this->formValues[$key];
-        }
-        return null;
-    }
 
     public function isValid(): bool
     {
         return $this->_validate();
     }
-
 
     public function setSubmitUrl(string $submitUrl): void
     {
